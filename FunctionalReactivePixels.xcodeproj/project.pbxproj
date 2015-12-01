@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		252180551C0D6FF10047ABD3 /* FRPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 252180541C0D6FF10047ABD3 /* FRPCell.m */; };
+		252180581C0D83640047ABD3 /* FRPFullSizePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252180571C0D83640047ABD3 /* FRPFullSizePhotoViewController.m */; };
+		2521805B1C0D86C20047ABD3 /* FRPPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2521805A1C0D86C20047ABD3 /* FRPPhotoViewController.m */; };
+		25D0D5281C0C3D7E0070BEB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D0D5271C0C3D7E0070BEB9 /* main.m */; };
+		25D0D52B1C0C3D7E0070BEB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D0D52A1C0C3D7E0070BEB9 /* AppDelegate.m */; };
+		25D0D5331C0C3D7E0070BEB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25D0D5321C0C3D7E0070BEB9 /* Assets.xcassets */; };
+		25D0D5361C0C3D7E0070BEB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D0D5341C0C3D7E0070BEB9 /* LaunchScreen.storyboard */; };
+		25D0D53F1C0C3DF90070BEB9 /* FRPGallaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D0D53E1C0C3DF90070BEB9 /* FRPGallaryViewController.m */; };
+		25D0D5421C0C3E110070BEB9 /* FRPGallaryFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D0D5411C0C3E110070BEB9 /* FRPGallaryFlowLayout.m */; };
+		25D0D5461C0C47140070BEB9 /* FRPPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D0D5451C0C47140070BEB9 /* FRPPhotoModel.m */; };
+		25D0D5491C0C47920070BEB9 /* FRPPhotoImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D0D5481C0C47920070BEB9 /* FRPPhotoImporter.m */; };
+		77785969C729B9AAD4F01EA9 /* libPods-FunctionalReactivePixels.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F819CD567223946B8FE74F /* libPods-FunctionalReactivePixels.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		252180531C0D6FF10047ABD3 /* FRPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPCell.h; sourceTree = "<group>"; };
+		252180541C0D6FF10047ABD3 /* FRPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPCell.m; sourceTree = "<group>"; };
+		252180561C0D83640047ABD3 /* FRPFullSizePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPFullSizePhotoViewController.h; sourceTree = "<group>"; };
+		252180571C0D83640047ABD3 /* FRPFullSizePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPFullSizePhotoViewController.m; sourceTree = "<group>"; };
+		252180591C0D86C20047ABD3 /* FRPPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPPhotoViewController.h; sourceTree = "<group>"; };
+		2521805A1C0D86C20047ABD3 /* FRPPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPPhotoViewController.m; sourceTree = "<group>"; };
+		2521805C1C0D88E50047ABD3 /* PrivateConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivateConstants.h; sourceTree = "<group>"; };
+		25D0D5231C0C3D7E0070BEB9 /* FunctionalReactivePixels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionalReactivePixels.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25D0D5271C0C3D7E0070BEB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		25D0D5291C0C3D7E0070BEB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		25D0D52A1C0C3D7E0070BEB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		25D0D5321C0C3D7E0070BEB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25D0D5351C0C3D7E0070BEB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		25D0D5371C0C3D7E0070BEB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25D0D53D1C0C3DF90070BEB9 /* FRPGallaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPGallaryViewController.h; sourceTree = "<group>"; };
+		25D0D53E1C0C3DF90070BEB9 /* FRPGallaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPGallaryViewController.m; sourceTree = "<group>"; };
+		25D0D5401C0C3E110070BEB9 /* FRPGallaryFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPGallaryFlowLayout.h; sourceTree = "<group>"; };
+		25D0D5411C0C3E110070BEB9 /* FRPGallaryFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPGallaryFlowLayout.m; sourceTree = "<group>"; };
+		25D0D5431C0C41DE0070BEB9 /* FunctionalResctivePixels.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionalResctivePixels.pch; sourceTree = "<group>"; };
+		25D0D5441C0C47140070BEB9 /* FRPPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPPhotoModel.h; sourceTree = "<group>"; };
+		25D0D5451C0C47140070BEB9 /* FRPPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPPhotoModel.m; sourceTree = "<group>"; };
+		25D0D5471C0C47920070BEB9 /* FRPPhotoImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPPhotoImporter.h; sourceTree = "<group>"; };
+		25D0D5481C0C47920070BEB9 /* FRPPhotoImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPPhotoImporter.m; sourceTree = "<group>"; };
+		4513B8876762E113DB845850 /* Pods-FunctionalReactivePixels.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionalReactivePixels.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionalReactivePixels/Pods-FunctionalReactivePixels.release.xcconfig"; sourceTree = "<group>"; };
+		99F819CD567223946B8FE74F /* libPods-FunctionalReactivePixels.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunctionalReactivePixels.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4D979E6A1BAFFB3F5203F97 /* Pods-FunctionalReactivePixels.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionalReactivePixels.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionalReactivePixels/Pods-FunctionalReactivePixels.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25D0D5201C0C3D7E0070BEB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77785969C729B9AAD4F01EA9 /* libPods-FunctionalReactivePixels.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15F0AE28A02FC527015A801F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4D979E6A1BAFFB3F5203F97 /* Pods-FunctionalReactivePixels.debug.xcconfig */,
+				4513B8876762E113DB845850 /* Pods-FunctionalReactivePixels.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		25D0D51A1C0C3D7E0070BEB9 = {
+			isa = PBXGroup;
+			children = (
+				25D0D5251C0C3D7E0070BEB9 /* FunctionalReactivePixels */,
+				25D0D5241C0C3D7E0070BEB9 /* Products */,
+				15F0AE28A02FC527015A801F /* Pods */,
+				6CEA1AACA1DCAAB8C4BCAA87 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		25D0D5241C0C3D7E0070BEB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25D0D5231C0C3D7E0070BEB9 /* FunctionalReactivePixels.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25D0D5251C0C3D7E0070BEB9 /* FunctionalReactivePixels */ = {
+			isa = PBXGroup;
+			children = (
+				2521805C1C0D88E50047ABD3 /* PrivateConstants.h */,
+				25D0D5291C0C3D7E0070BEB9 /* AppDelegate.h */,
+				25D0D52A1C0C3D7E0070BEB9 /* AppDelegate.m */,
+				25D0D5441C0C47140070BEB9 /* FRPPhotoModel.h */,
+				25D0D5451C0C47140070BEB9 /* FRPPhotoModel.m */,
+				25D0D5471C0C47920070BEB9 /* FRPPhotoImporter.h */,
+				25D0D5481C0C47920070BEB9 /* FRPPhotoImporter.m */,
+				25D0D53D1C0C3DF90070BEB9 /* FRPGallaryViewController.h */,
+				25D0D53E1C0C3DF90070BEB9 /* FRPGallaryViewController.m */,
+				252180561C0D83640047ABD3 /* FRPFullSizePhotoViewController.h */,
+				252180571C0D83640047ABD3 /* FRPFullSizePhotoViewController.m */,
+				252180591C0D86C20047ABD3 /* FRPPhotoViewController.h */,
+				2521805A1C0D86C20047ABD3 /* FRPPhotoViewController.m */,
+				252180531C0D6FF10047ABD3 /* FRPCell.h */,
+				252180541C0D6FF10047ABD3 /* FRPCell.m */,
+				25D0D5401C0C3E110070BEB9 /* FRPGallaryFlowLayout.h */,
+				25D0D5411C0C3E110070BEB9 /* FRPGallaryFlowLayout.m */,
+				25D0D5321C0C3D7E0070BEB9 /* Assets.xcassets */,
+				25D0D5341C0C3D7E0070BEB9 /* LaunchScreen.storyboard */,
+				25D0D5371C0C3D7E0070BEB9 /* Info.plist */,
+				25D0D5261C0C3D7E0070BEB9 /* Supporting Files */,
+			);
+			path = FunctionalReactivePixels;
+			sourceTree = "<group>";
+		};
+		25D0D5261C0C3D7E0070BEB9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25D0D5431C0C41DE0070BEB9 /* FunctionalResctivePixels.pch */,
+				25D0D5271C0C3D7E0070BEB9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6CEA1AACA1DCAAB8C4BCAA87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99F819CD567223946B8FE74F /* libPods-FunctionalReactivePixels.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25D0D5221C0C3D7E0070BEB9 /* FunctionalReactivePixels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25D0D53A1C0C3D7E0070BEB9 /* Build configuration list for PBXNativeTarget "FunctionalReactivePixels" */;
+			buildPhases = (
+				A3ADA6B6327D57FBCD461E14 /* Check Pods Manifest.lock */,
+				25D0D51F1C0C3D7E0070BEB9 /* Sources */,
+				25D0D5201C0C3D7E0070BEB9 /* Frameworks */,
+				25D0D5211C0C3D7E0070BEB9 /* Resources */,
+				EF8B82EED96E0F32F67F83B2 /* Embed Pods Frameworks */,
+				61BF6A0D66B37D12DF4B91B9 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FunctionalReactivePixels;
+			productName = FunctionalReactivePixels;
+			productReference = 25D0D5231C0C3D7E0070BEB9 /* FunctionalReactivePixels.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25D0D51B1C0C3D7E0070BEB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "朱文杰";
+				TargetAttributes = {
+					25D0D5221C0C3D7E0070BEB9 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 25D0D51E1C0C3D7E0070BEB9 /* Build configuration list for PBXProject "FunctionalReactivePixels" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 25D0D51A1C0C3D7E0070BEB9;
+			productRefGroup = 25D0D5241C0C3D7E0070BEB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25D0D5221C0C3D7E0070BEB9 /* FunctionalReactivePixels */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25D0D5211C0C3D7E0070BEB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25D0D5361C0C3D7E0070BEB9 /* LaunchScreen.storyboard in Resources */,
+				25D0D5331C0C3D7E0070BEB9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61BF6A0D66B37D12DF4B91B9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FunctionalReactivePixels/Pods-FunctionalReactivePixels-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3ADA6B6327D57FBCD461E14 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EF8B82EED96E0F32F67F83B2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FunctionalReactivePixels/Pods-FunctionalReactivePixels-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25D0D51F1C0C3D7E0070BEB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25D0D5461C0C47140070BEB9 /* FRPPhotoModel.m in Sources */,
+				252180551C0D6FF10047ABD3 /* FRPCell.m in Sources */,
+				25D0D5421C0C3E110070BEB9 /* FRPGallaryFlowLayout.m in Sources */,
+				2521805B1C0D86C20047ABD3 /* FRPPhotoViewController.m in Sources */,
+				25D0D53F1C0C3DF90070BEB9 /* FRPGallaryViewController.m in Sources */,
+				252180581C0D83640047ABD3 /* FRPFullSizePhotoViewController.m in Sources */,
+				25D0D5491C0C47920070BEB9 /* FRPPhotoImporter.m in Sources */,
+				25D0D52B1C0C3D7E0070BEB9 /* AppDelegate.m in Sources */,
+				25D0D5281C0C3D7E0070BEB9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		25D0D5341C0C3D7E0070BEB9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25D0D5351C0C3D7E0070BEB9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25D0D5381C0C3D7E0070BEB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		25D0D5391C0C3D7E0070BEB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25D0D53B1C0C3D7E0070BEB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4D979E6A1BAFFB3F5203F97 /* Pods-FunctionalReactivePixels.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FunctionalReactivePixels/FunctionalResctivePixels.pch";
+				INFOPLIST_FILE = FunctionalReactivePixels/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.venj.FunctionalReactivePixels;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		25D0D53C1C0C3D7E0070BEB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4513B8876762E113DB845850 /* Pods-FunctionalReactivePixels.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FunctionalReactivePixels/FunctionalResctivePixels.pch";
+				INFOPLIST_FILE = FunctionalReactivePixels/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.venj.FunctionalReactivePixels;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25D0D51E1C0C3D7E0070BEB9 /* Build configuration list for PBXProject "FunctionalReactivePixels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25D0D5381C0C3D7E0070BEB9 /* Debug */,
+				25D0D5391C0C3D7E0070BEB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25D0D53A1C0C3D7E0070BEB9 /* Build configuration list for PBXNativeTarget "FunctionalReactivePixels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25D0D53B1C0C3D7E0070BEB9 /* Debug */,
+				25D0D53C1C0C3D7E0070BEB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25D0D51B1C0C3D7E0070BEB9 /* Project object */;
+}

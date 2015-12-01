@@ -1,0 +1,16 @@
+//
+//  FunctionalResctivePixels.pch
+//  FunctionalReactivePixels
+//
+//  Created by 朱文杰 on 15/11/30.
+//  Copyright © 2015年 朱文杰. All rights reserved.
+//
+
+#ifndef FunctionalResctivePixels_h
+#define FunctionalResctivePixels_h
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <500px-iOS-api/PXAPI.h>
+#import <libextobjc/EXTScope.h>
+
+#endif /* FunctionalResctivePixels_h */

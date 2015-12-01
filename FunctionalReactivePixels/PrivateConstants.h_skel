@@ -1,0 +1,15 @@
+//
+//  PrivateConstants.h
+//  FunctionalReactivePixels
+//
+//  Created by 朱文杰 on 15/12/1.
+//  Copyright © 2015年 朱文杰. All rights reserved.
+//
+
+#ifndef PrivateConstants_h
+#define PrivateConstants_h
+
+#define API_KEY_500PX @"SOME_KEY"
+#define API_SECRET_500PX @"SOME_SECRET"
+
+#endif /* PrivateConstants_h */
