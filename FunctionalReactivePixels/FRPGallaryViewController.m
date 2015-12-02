@@ -55,12 +55,14 @@ static NSString * const reuseIdentifier = @"Cell";
     }];
 
     self.collectionViewDelegate = [[RACDelegateProxy alloc] initWithProtocol:@protocol(UICollectionViewDelegate)];
-    [[self.collectionViewDelegate rac_signalForSelector:@selector(collectionView:didDeselectItemAtIndexPath:) fromProtocol:@protocol(UICollectionViewDelegate)] subscribeNext:^(RACTuple *value) {
+    [[self.collectionViewDelegate rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:) fromProtocol:@protocol(UICollectionViewDelegate)] subscribeNext:^(RACTuple *value) {
         @strongify(self);
         FRPFullSizePhotoViewController *viewController = [[FRPFullSizePhotoViewController alloc] initWithPhotoModels:self.photoArray currentPhotoIndex:[(NSIndexPath *)(value.second) item]];
         viewController.delegate = (id<FRPFullSizePhotoViewControllerDelegate>)viewControllerDelegate;
         [self.navigationController pushViewController:viewController animated:YES];
     }];
+
+    self.collectionView.delegate = self.collectionViewDelegate;
 }
 
 - (void)didReceiveMemoryWarning {
