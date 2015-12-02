@@ -12,41 +12,31 @@
 
 @implementation FRPPhotoImporter
 
-+ (RACReplaySubject * _Nonnull)importPhotos {
-    RACReplaySubject *subject = [RACReplaySubject subject];
++ (RACSignal * _Nonnull)importPhotos {
     NSURLRequest *request = [self popularURLRequest];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        if (data) {
-            id results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            [subject sendNext:[[[results[@"photos"] rac_sequence] map:^id(NSDictionary *photoDictionary) {
-                FRPPhotoModel *model = [[FRPPhotoModel alloc] init];
-                [self configurePhotoModel:model withDictionary:photoDictionary];
-                [self downloadThumbnailForPhotoModel:model];
-                return model;
-            }] array]];
-            [subject sendCompleted];
-        }
-        else {
-            [subject sendError:connectionError];
-        }
-    }];
-
-    return subject;
+    return [[[[[[NSURLConnection rac_sendAsynchronousRequest:request] reduceEach:^id(NSURLResponse *response, NSData *data) {
+        return data;
+    }] deliverOn:[RACScheduler mainThreadScheduler]] map:^id(NSData *data) {
+        id results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        return [[[results[@"photos"] rac_sequence] map:^id(NSDictionary *photoDictionary) {
+            FRPPhotoModel *model = [[FRPPhotoModel alloc] init];
+            [self configurePhotoModel:model withDictionary:photoDictionary];
+            [self downloadThumbnailForPhotoModel:model];
+            return model;
+        }] array];
+    }] publish] autoconnect];
 }
 
-+ (RACReplaySubject * _Nonnull)fetchPhotoDetails:(FRPPhotoModel * _Nonnull)photoModel {
-    RACReplaySubject *subject = [RACReplaySubject subject];
++ (RACSignal * _Nonnull)fetchPhotoDetails:(FRPPhotoModel * _Nonnull)photoModel {
     NSURLRequest *request = [self photoURLRequest:photoModel];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        if (data) {
-            id result = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil][@"photo"];
-            [self configurePhotoModel:photoModel withDictionary:result];
-            [self downloadFullSizedImageForPhotoModel:photoModel];
-            [subject sendNext:photoModel];
-            [subject sendCompleted];
-        }
-    }];
-    return subject;
+    return [[[[[[NSURLConnection rac_sendAsynchronousRequest:request] reduceEach:^id (NSURLResponse *response, NSData *data) {
+        return data;
+    }] deliverOn:[RACScheduler mainThreadScheduler]] map:^id(NSData *data) {
+        id result = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil][@"photo"];
+        [self configurePhotoModel:photoModel withDictionary:result];
+        [self downloadFullSizedImageForPhotoModel:photoModel];
+        return photoModel;
+    }] publish] autoconnect];
 }
 
 + (NSURLRequest * _Nonnull)popularURLRequest {
@@ -77,24 +67,18 @@
 }
 
 + (void)downloadThumbnailForPhotoModel:(FRPPhotoModel *)model {
-    [self download:model.thumbnailURL withCompletion:^(NSData *data) {
-        model.thumbnailData = data;
-    }];
+    RAC(model, thumbnailData) = [self download:model.thumbnailURL];
 }
 
 + (void)downloadFullSizedImageForPhotoModel:(FRPPhotoModel *)model {
-    [self download:model.fullsizedURL withCompletion:^(NSData *data) {
-        model.fullsizedData = data;
-    }];
+    RAC(model, fullsizedData) = [self download:model.fullsizedURL];
 }
 
-+ (void)download:(NSString *)urlString withCompletion:(void(^)(NSData *data))completion {
++ (RACSignal *)download:(NSString *)urlString {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        if (completion) {
-            completion(data);
-        }
-    }];
+    return [[[NSURLConnection rac_sendAsynchronousRequest:request] map:^id(RACTuple *value) {
+        return [value second];
+    }] deliverOn:[RACScheduler mainThreadScheduler]];
 }
 
 @end

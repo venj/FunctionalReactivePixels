@@ -11,9 +11,11 @@
 #import "FRPPhotoImporter.h"
 #import "FRPCell.h"
 #import "FRPFullSizePhotoViewController.h"
+#import <ReactiveCocoa/RACDelegateProxy.h>
 
-@interface FRPGallaryViewController () <FRPFillSizePhotoViewControllerDelegate>
+@interface FRPGallaryViewController ()
 @property (nonatomic, strong) NSArray<FRPPhotoModel *> *photoArray;
+@property (nonatomic, strong) id collectionViewDelegate;
 @end
 
 @implementation FRPGallaryViewController
@@ -41,20 +43,29 @@ static NSString * const reuseIdentifier = @"Cell";
         [self.collectionView reloadData];
     }];
 
-    [self loadPopularPhotos];
+    RAC(self, photoArray) = [[[[FRPPhotoImporter importPhotos] doCompleted:^{
+        @strongify(self);
+        [self.collectionView reloadData];
+    }] logError] catchTo:[RACSignal empty]];
+
+    RACDelegateProxy *viewControllerDelegate = [[RACDelegateProxy alloc] initWithProtocol:@protocol(FRPFullSizePhotoViewControllerDelegate)];
+    [[viewControllerDelegate rac_signalForSelector:@selector(userDidScroll:toPhotoAtIndex:) fromProtocol:@protocol(FRPFullSizePhotoViewControllerDelegate)] subscribeNext:^(RACTuple *value) {
+        @strongify(self);
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:[value.second integerValue] inSection:0]  atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:NO];
+    }];
+
+    self.collectionViewDelegate = [[RACDelegateProxy alloc] initWithProtocol:@protocol(UICollectionViewDelegate)];
+    [[self.collectionViewDelegate rac_signalForSelector:@selector(collectionView:didDeselectItemAtIndexPath:) fromProtocol:@protocol(UICollectionViewDelegate)] subscribeNext:^(RACTuple *value) {
+        @strongify(self);
+        FRPFullSizePhotoViewController *viewController = [[FRPFullSizePhotoViewController alloc] initWithPhotoModels:self.photoArray currentPhotoIndex:[(NSIndexPath *)(value.second) item]];
+        viewController.delegate = (id<FRPFullSizePhotoViewControllerDelegate>)viewControllerDelegate;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)loadPopularPhotos {
-    [[FRPPhotoImporter importPhotos] subscribeNext:^(id x) {
-        self.photoArray = x;
-    } error:^(NSError *error) {
-        NSLog(@"Couldn't fetch photos from 500px: %@", error);
-    }];
 }
 
 /*
@@ -116,15 +127,4 @@ static NSString * const reuseIdentifier = @"Cell";
 	
 }
 */
-
-- (void)userDidScroll:(FRPFullSizePhotoViewController *)viewController toPhotoAtIndex:(NSInteger)index {
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:NO];
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    FRPFullSizePhotoViewController *viewController = [[FRPFullSizePhotoViewController alloc] initWithPhotoModels:self.photoArray currentPhotoIndex:indexPath.item];
-    viewController.delegate = self;
-    [self.navigationController pushViewController:viewController animated:YES];
-}
-
 @end

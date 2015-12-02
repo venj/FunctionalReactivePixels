@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 @class FRPPhotoModel;
 @interface FRPCell : UICollectionViewCell
-- (void)setPhotoModel:(FRPPhotoModel *)photoModel;
+@property (nonatomic, strong) FRPPhotoModel *photoModel;
 @end
